@@ -6,6 +6,8 @@
  * post_after
  * comment_after
  * footer_after (done)
+ * 
+ * other possible hooks?  https://github.com/zamoose/themehookalliance
  *
  * @package bootstart
  */
