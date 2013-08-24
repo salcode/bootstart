@@ -1,4 +1,11 @@
 <?php
+/**
+ * functions.php
+ *
+ * @package bootstart
+ */
+
+define( 'BOOTSTART_VERSION', '0.1.0' );
 
 /**
  * Include all php files in the /includes directory
@@ -6,5 +13,18 @@
  * https://gist.github.com/theandystratton/5924570
  */
 foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
+
+/**
+ * Enqueue base css and js
+ */
+
+function bootstart_scripts_styles() {
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_style(  'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", array(), '3.0.0' );
+
+    wp_enqueue_script( 'bootstart', get_template_directory_uri() . "/js/bootstart.js", array('bootstrap'), BOOTSTART_VERSION, true );
+    wp_enqueue_style(  'bootstart', get_template_directory_uri() . "/theme.css", array(), BOOTSTART_VERSION );
+}
+add_action( 'wp_enqueue_scripts', 'bootstart_scripts_styles' );
 
 
