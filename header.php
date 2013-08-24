@@ -12,7 +12,7 @@
 <!--[if IE 7 ]>    <html class="ie ie7 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 no-js" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js"  <?php language_attributes(); ?><!--<![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"  <?php language_attributes(); ?>><!--<![endif]-->
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <?php // viewport based on http://getbootstrap.com/getting-started/#template ?>
@@ -36,27 +36,27 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-    <?php do_action( 'before' ); ?>
-        <header id="masthead" class="site-header" role="banner">
-            <div class="site-branding">
-                <div class="site-title">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <?php bloginfo( 'name' ); ?>
-                    </a>
-                </div>
-                <div class="site-description">
-                    <?php bloginfo( 'description' ); ?>
-                </div>
-            </div><!-- .site-branding -->
+    <div id="page" class="hfeed site">
+        <?php do_action( 'before' ); ?>
+            <header id="masthead" class="site-header" role="banner">
+                <div class="site-branding">
+                    <div class="site-title">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <?php bloginfo( 'name' ); ?>
+                        </a>
+                    </div>
+                    <div class="site-description">
+                        <?php bloginfo( 'description' ); ?>
+                    </div>
+                </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-                <div class="screen-reader-text skip-link">
-                    <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
-                </div><!-- .screen-reader-text -->
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <div class="screen-reader-text skip-link">
+                        <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
+                    </div><!-- .screen-reader-text -->
 
-                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-            </nav><!-- #site-navigation -->
-        </header><!-- #masthead -->
-        <?php do_action('header_after'); ?>
-        <div id="content" class="site-content">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                </nav><!-- #site-navigation -->
+            </header><!-- #masthead -->
+            <?php do_action('header_after'); ?>
+            <div id="content" class="site-content">

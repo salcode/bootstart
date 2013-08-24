@@ -40,7 +40,7 @@
                 if ( $categories_list ) :
             ?>
                     <span class="cat-links">
-                        <?php printf( __( 'Posted in %1$s', 'bootstart' ), $categories_list ); ?>
+                        <?php //printf( __( 'Posted in %1$s', 'bootstart' ), $categories_list ); ?>
                     </span>
             <?php endif; // End if categories ?>
 
