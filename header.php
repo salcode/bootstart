@@ -56,5 +56,6 @@
 
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </nav><!-- #site-navigation -->
-
-            <div id="content" class="site-content">
+        </header><!-- #masthead -->
+        <?php do_action('header_after'); ?>
+        <div id="content" class="site-content">

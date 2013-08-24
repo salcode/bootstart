@@ -1,6 +1,11 @@
 <?php
 /**
  * functions.php
+ * NOTE: this functions include hooks outlined on http://core.trac.wordpress.org/ticket/21506
+ * header_after (done)
+ * post_after
+ * comment_after
+ * footer_after (done)
  *
  * @package bootstart
  */
