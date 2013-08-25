@@ -36,6 +36,14 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div class="screen-reader-text skip-link">
+            <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
+        </div><!-- .screen-reader-text -->
+
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    </nav><!-- #site-navigation -->
+
     <div id="page" class="hfeed site">
         <?php do_action( 'before' ); ?>
             <header id="masthead" class="site-header" role="banner">
@@ -50,13 +58,6 @@
                     </div>
                 </div><!-- .site-branding -->
 
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <div class="screen-reader-text skip-link">
-                        <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
-                    </div><!-- .screen-reader-text -->
-
-                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-                </nav><!-- #site-navigation -->
             </header><!-- #masthead -->
             <?php do_action('header_after'); ?>
             <div id="content" class="site-content">

@@ -7,10 +7,8 @@
 
     get_header();
 ?>
-<div id="primary" class="container">
-    <main id="main" class="site-main" role="main">
-        <?php get_template_part( 'loop' ); ?>
-    </main><!-- #main -->
-</div><!-- #primary -->
-<?php //get_sidebar(); ?>
+<main id="main" class="<?php echo bstart_get_html_classes('main', array('site-main') ); ?>" role="main">
+    <?php get_template_part( 'loop' ); ?>
+</main><!-- #main -->
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

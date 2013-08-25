@@ -5,9 +5,7 @@
  * @package bootstart
  */
 ?>
-
-THIS IS THE LOOP
-
+<!-- start loop.php -->
 <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
         <?php
@@ -21,3 +19,4 @@ THIS IS THE LOOP
 <?php else: ?>
     No results
 <?php endif; ?>
+<!-- end loop.php -->
