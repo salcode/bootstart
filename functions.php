@@ -34,6 +34,10 @@ function bstart_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'bstart_scripts_styles' );
 
+
+/**
+ * Image Sizes
+ */
 add_image_size( 'bstart-featured', 847, 420, true );
 
 
