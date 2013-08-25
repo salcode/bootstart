@@ -16,9 +16,10 @@
                     <?php printf( __( 'Theme: %1$s by %2$s.', 'bootstart' ), 'bootstart', '<a href="http://salferrarello.com/">Sal Ferrarello</a>' ); ?>
             </div><!-- .site-info -->
             <?php do_action('footer_after'); ?>
+
         </footer><!-- #colophon -->
 
-<?php wp_footer(); ?>
+        <?php wp_footer(); ?>
 
     </div><!-- #page -->
 </body>

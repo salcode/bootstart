@@ -21,13 +21,21 @@ define( 'BSTART_VERSION', '0.1.0' );
  */
 foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
 
+add_action('before_page_container', 'bstart_do_nav_before_page_container');
+function bstart_do_nav_before_page_container() {
+    get_template_part( 'nav' );
+}
+
 /**
  * Enqueue base css and js
  */
 
 function bstart_scripts_styles() {
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_style(  'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", array(), '3.0.0' );
+    // bootstrap css
+    wp_enqueue_style(  'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",  array(),            '3.0.0' );
+    // bootstrap js
+    wp_enqueue_script( 'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js",    array('jquery'),    '3.0.0', true );
 
     wp_enqueue_script( 'bstart', get_template_directory_uri() . "/js/bootstart.js", array('bootstrap'), BSTART_VERSION, true );
     wp_enqueue_style(  'bstart', get_template_directory_uri() . "/theme.css", array(), BSTART_VERSION );

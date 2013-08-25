@@ -36,14 +36,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <!-- TODO move nav into before_page_container hook -->
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-        <div class="screen-reader-text skip-link">
-            <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
-        </div><!-- .screen-reader-text -->
-
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    </nav><!-- #site-navigation -->
 
     <?php do_action( 'before_page_container' ); ?>
 
