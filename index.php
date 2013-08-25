@@ -7,7 +7,7 @@
 
     get_header();
 ?>
-<main id="main" class="<?php echo bstart_get_html_classes('main', array('site-main') ); ?>" role="main">
+<main id="main" class="<?php bstart_class('main'); ?>" role="main">
     <?php get_template_part( 'loop' ); ?>
 </main><!-- #main -->
 <?php get_sidebar(); ?>

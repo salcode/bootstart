@@ -17,7 +17,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <?php // viewport based on http://getbootstrap.com/getting-started/#template ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <title><?php wp_title( '|', true, 'right' ); ?> - <?php bloginfo('name'); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -36,6 +36,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <!-- TODO move nav into before_page_container hook -->
     <nav id="site-navigation" class="main-navigation" role="navigation">
         <div class="screen-reader-text skip-link">
             <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
@@ -44,9 +45,12 @@
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav><!-- #site-navigation -->
 
-    <div id="page" class="hfeed site">
+    <?php do_action( 'before_page_container' ); ?>
+
+    <div id="page" class="<?php bstart_class('page', array('hfeed') ); ?>">
         <?php do_action( 'before' ); ?>
-            <header id="masthead" class="site-header" role="banner">
+
+            <header id="masthead" class="<?php bstart_class('masthead'); ?>" role="banner">
                 <div class="site-branding">
                     <div class="site-title">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -60,4 +64,5 @@
 
             </header><!-- #masthead -->
             <?php do_action('header_after'); ?>
-            <div id="content" class="site-content">
+
+            <div id="content" class="<?php bstart_class('content'); ?>">
