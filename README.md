@@ -7,7 +7,7 @@ Bootstrap Classes
 -----------------
 
 You've probably noticed that I'm adding lots of classes to get
-Bootstrap to display properly and you're likely, "Why didn't he
+Bootstrap to display properly and you're likely asking, "Why didn't he
 just use mixins to assign the css to the revelant elements?"
 Great question. I'm not 100% certain but I've got a couple of
 reasons (which I'm listing both for you and to convince my future self
