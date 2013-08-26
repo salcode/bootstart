@@ -42,6 +42,27 @@ function bstart_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'bstart_scripts_styles' );
 
+/**
+ * Enqueue js with IE conditional comments
+ *
+ * based on
+ * http://getbootstrap.com/getting-started/#template
+ * http://stackoverflow.com/questions/11564142/wordpress-enqueue-scripts-for-only-if-lt-ie-9/16221114#16221114
+ */
+function bstart_ie_cc_js() {
+   ?>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="<?php echo get_template_directory_uri() . '/js/respond.min.js'; ?>"></script>
+    <![endif]-->
+
+    <?php
+}
+add_action( 'wp_head', 'bstart_ie_cc_js');
+
+
+
 
 /**
  * Image Sizes
