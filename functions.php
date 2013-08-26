@@ -22,24 +22,28 @@ define( 'BSTART_VERSION', '0.1.0' );
 foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) { include $file; }
 
 add_action('before_page_container', 'bstart_do_nav_before_page_container');
-function bstart_do_nav_before_page_container() {
-    get_template_part( 'nav' );
-}
+if (!function_exists('bstart_do_nav_before_page_container')) {
+    function bstart_do_nav_before_page_container() {
+        get_template_part( 'nav' );
+    }
+} // function_exists()
 
 /**
  * Enqueue base css and js
  */
+if (!function_exists('bstart_scripts_styles')) {
+    function bstart_scripts_styles() {
+        wp_enqueue_script( 'jquery' );
+        // bootstrap css
+        wp_enqueue_style(  'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",  array(),            '3.0.0' );
+        // bootstrap js
+        wp_enqueue_script( 'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js",    array('jquery'),    '3.0.0', true );
 
-function bstart_scripts_styles() {
-    wp_enqueue_script( 'jquery' );
-    // bootstrap css
-    wp_enqueue_style(  'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",  array(),            '3.0.0' );
-    // bootstrap js
-    wp_enqueue_script( 'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js",    array('jquery'),    '3.0.0', true );
+        wp_enqueue_script( 'bstart', get_template_directory_uri() . "/js/bootstart.js", array('bootstrap'), BSTART_VERSION, true );
+        wp_enqueue_style(  'bstart', get_template_directory_uri() . "/theme.css", array(), BSTART_VERSION );
+    }
+} // function_exists()
 
-    wp_enqueue_script( 'bstart', get_template_directory_uri() . "/js/bootstart.js", array('bootstrap'), BSTART_VERSION, true );
-    wp_enqueue_style(  'bstart', get_template_directory_uri() . "/theme.css", array(), BSTART_VERSION );
-}
 add_action( 'wp_enqueue_scripts', 'bstart_scripts_styles' );
 
 /**
@@ -49,16 +53,18 @@ add_action( 'wp_enqueue_scripts', 'bstart_scripts_styles' );
  * http://getbootstrap.com/getting-started/#template
  * http://stackoverflow.com/questions/11564142/wordpress-enqueue-scripts-for-only-if-lt-ie-9/16221114#16221114
  */
-function bstart_ie_cc_js() {
-   ?>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="<?php echo get_template_directory_uri() . '/js/respond.min.js'; ?>"></script>
-    <![endif]-->
+if (!function_exists('bstart_ie_cc_js')) {
+    function bstart_ie_cc_js() {
+       ?>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <script src="<?php echo get_template_directory_uri() . '/js/respond.min.js'; ?>"></script>
+        <![endif]-->
 
-    <?php
-}
+        <?php
+    }
+} // function_exists()
 add_action( 'wp_head', 'bstart_ie_cc_js');
 
 

@@ -21,18 +21,6 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-    <?php // shim and Respond.js based on http://getbootstrap.com/getting-started/#template ?>
-    <?php
-    /*
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      // NEEDS TO BE UPDATED
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-    */
-    ?>
-
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
