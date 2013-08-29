@@ -28,6 +28,13 @@ function bstart_class($id, $classes = array(), $return = false ) {
  * Add default classes for the following html elements
  */
 
+// #site-navigation - .navbar navbar-default
+add_filter( 'bstart_site-navigation_class', 'do_bstart_site_navigation_class' );
+function do_bstart_site_navigation_class( $classes ) {
+    $classes[] = 'navbar';
+    $classes[] = 'navbar-default';
+    return $classes;
+}
 // #page - .container
 add_filter( 'bstart_page_class', 'do_bstart_page_class' );
 function do_bstart_page_class( $classes ) {

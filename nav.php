@@ -6,9 +6,9 @@
  */
 ?>
 <!-- start nav.php -->
-    <nav id="site-navigation" class="main-navigation" role="navigation">
+    <nav id="site-navigation" class="<?php bstart_class('site-navigation'); ?>" role="navigation">
         <div class="sr-only skip-link">
-            <a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a>
+            <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'bstart' ); ?>"><?php _e( 'Skip to content', 'bstart' ); ?></a>
         </div><!-- .sr-only -->
 
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
