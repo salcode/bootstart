@@ -30,19 +30,6 @@
     <div id="page" class="<?php bstart_class('page', array('hfeed') ); ?>">
         <?php do_action( 'before' ); ?>
 
-            <header id="masthead" class="<?php bstart_class('masthead'); ?>" role="banner">
-                <div class="site-branding">
-                    <div class="site-title">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                            <?php bloginfo( 'name' ); ?>
-                        </a>
-                    </div>
-                    <div class="site-description">
-                        <?php bloginfo( 'description' ); ?>
-                    </div>
-                </div><!-- .site-branding -->
-
-            </header><!-- #masthead -->
             <?php do_action('header_after'); ?>
 
             <div id="content" class="<?php bstart_class('content'); ?>">

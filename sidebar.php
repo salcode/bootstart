@@ -14,9 +14,11 @@
         </aside>
 
         <aside id="archives" class="widget">
-            <h1 class="widget-title"><?php _e( 'Categories', 'bstart' ); ?></h1>
+            <h4 class="widget-title"><?php _e( 'Categories', 'bstart' ); ?></h4>
             <ul>
-                <?php wp_list_categories(); ?>
+                <?php wp_list_categories(array(
+                    'title_li'    => ''
+                )); ?>
             </ul>
         </aside>
 

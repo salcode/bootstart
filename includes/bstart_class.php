@@ -32,9 +32,17 @@ function bstart_class($id, $classes = array(), $return = false ) {
 add_filter( 'bstart_site-navigation_class', 'do_bstart_site_navigation_class' );
 function do_bstart_site_navigation_class( $classes ) {
     $classes[] = 'navbar';
-    $classes[] = 'navbar-default';
+    $classes[] = 'navbar-inverse';
+    $classes[] = 'navbar-fixed-top';
     return $classes;
 }
+// #site-brand - .navbar-brand
+add_filter( 'bstart_site-brand_class', 'do_bstart_site_brand_class' );
+function do_bstart_site_brand_class( $classes ) {
+    $classes[] = 'navbar-brand';
+    return $classes;
+}
+
 // #page - .container
 add_filter( 'bstart_page_class', 'do_bstart_page_class' );
 function do_bstart_page_class( $classes ) {
