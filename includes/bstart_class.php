@@ -40,6 +40,7 @@ function bstart_class($id, $classes = array(), $important_classes = array(), $re
     );
 
     // filter for important classes (seldom used), things like 'widget-area'
+    error_log('about to call ' .  'bstart_'.$id.'_class_important');
     $important_classes  = apply_filters(
         'bstart_'.$id.'_class_important',
         $important_classes, 
@@ -108,12 +109,36 @@ function bstart_class_parse_important( $classes, $important_classes) {
 }
 
 /**
- * Test modify sidebar
+ * Example Hooking
  */
 
+// Add class on #sidebar1 (Most common use of filter hook)
+//add_filter( 'bstart_sidebar1_class', 'do_bstart_sidebar1_class_add', 10, 2);
+function do_bstart_sidebar1_class_add( $classes, $important_classes ) {
+    $classes[] = 'new-class-added-via-hook';
+    return $classes;
+}
+
+// Add important class on #sidebar1
+//add_filter( 'bstart_sidebar1_class_important', 'do_bstart_sidebar1_class_add_important', 10, 2);
+function do_bstart_sidebar1_class_add_important( $important_classes, $classes ) {
+    $important_classes[] = 'additional-important-class';
+    return $important_classes;
+}
+
+
+// Overwrite (all non-important) classes  on #sidebar1
 //add_filter( 'bstart_sidebar1_class', 'do_bstart_sidebar1_class', 10, 2);
 function do_bstart_sidebar1_class( $classes, $important_classes ) {
     $classes = array('col-sm-2');
     return $classes;
 }
+
+// Overwrite important classes on #sidebar1
+//add_filter( 'bstart_sidebar1_class_important', 'do_bstart_sidebar1_class_important', 10, 2);
+function do_bstart_sidebar1_class_important( $important_classes, $classes ) {
+    $important_classes = array('sidebar-tastical');
+    return $important_classes;
+}
+
 
