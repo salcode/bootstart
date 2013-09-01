@@ -78,7 +78,7 @@ function bstart_class_force_array( $classes ) {
         // already an array, no need to do anything different
         return $classes;
     }
-    
+
     // the parameter is not a recognized type
     //error_log('bstart_class parameter is neither a string nor array');
     return new WP_Error('bstart_class_paramter', __('$classes (or $important_classes) paramter for bstart_class is neither an array nor string'));
