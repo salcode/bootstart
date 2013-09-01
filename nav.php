@@ -6,7 +6,7 @@
  */
 ?>
 <!-- start nav.php -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav id="site-navigation" class="<?php bstart_class('site-navigation', '!navbar navbar-default'); ?>" role="navigation">
         <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -21,7 +21,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="<?php bstart_class('site-brand'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                <a class="<?php bstart_class('site-brand', 'navbar-brand'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                     <?php bloginfo( 'name' ); ?>
                 </a>
             </div><!-- .navbar-header -->

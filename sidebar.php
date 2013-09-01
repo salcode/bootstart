@@ -5,7 +5,7 @@
  * @package bootstart
  */
 ?>
-<div id="sidebar1" class="widget-area col-sm-3" role="complementary">
+<div id="sidebar1" class="<?php bstart_class( 'sidebar1', '!widget-area col-sm-3' ); ?>" role="complementary">
     <?php do_action( 'before_sidebar' ); ?>
     <?php if ( ! dynamic_sidebar( 'sidebar1' ) ) : ?>
 

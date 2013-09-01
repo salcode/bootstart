@@ -27,9 +27,9 @@
 
     <?php do_action( 'before_page_container' ); ?>
 
-    <div id="page" class="<?php bstart_class('page', array('hfeed') ); ?>">
+    <div id="page" class="<?php bstart_class('page', '!hfeed container'); ?>">
         <?php do_action( 'before' ); ?>
 
             <?php do_action('header_after'); ?>
 
-            <div id="content" class="<?php bstart_class('content'); ?>">
+            <div id="content" class="<?php bstart_class('content', 'row'); ?>">
