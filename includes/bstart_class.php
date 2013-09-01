@@ -40,7 +40,6 @@ function bstart_class($id, $classes = array(), $important_classes = array(), $re
     );
 
     // filter for important classes (seldom used), things like 'widget-area'
-    error_log('about to call ' .  'bstart_'.$id.'_class_important');
     $important_classes  = apply_filters(
         'bstart_'.$id.'_class_important',
         $important_classes, 
