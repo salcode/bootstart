@@ -19,51 +19,55 @@
  *
  * Since we are building this with Bootstrap
  */
-function bstart_class($id, $classes = array(), $important_classes = array(), $return = false ) {
-    // ensure classes are arrays (e.g. convert from string to array if necessary)
-    $classes            = bstart_class_force_array ( $classes );
-    $important_classes  = bstart_class_force_array ( $important_classes );
 
-    // parse for important classes (see note about important classes)
-    list($classes, $important_classes) = bstart_class_parse_important( $classes, $important_classes );
-    /*evd(array(
-        $classes,
-        $important_classes,
-    ));
-    */
+if ( !function_exists('bstart_class') ) {
+    function bstart_class($id, $classes = array(), $important_classes = array(), $return = false ) {
+        // ensure classes are arrays (e.g. convert from string to array if necessary)
+        $classes            = bstart_class_force_array ( $classes );
+        $important_classes  = bstart_class_force_array ( $important_classes );
 
-    // filter for general classes (things like 'col-sm-3')
-    $classes = apply_filters(
-        'bstart_'.$id.'_class',
-        $classes,
-        $important_classes
-    );
+        // parse for important classes (see note about important classes)
+        list($classes, $important_classes) = bstart_class_parse_important( $classes, $important_classes );
+        /*evd(array(
+            $classes,
+            $important_classes,
+        ));
+        */
 
-    // filter for important classes (seldom used), things like 'widget-area'
-    $important_classes  = apply_filters(
-        'bstart_'.$id.'_class_important',
-        $important_classes, 
-        $classes
-    );
+        // filter for general classes (things like 'col-sm-3')
+        $classes = apply_filters(
+            'bstart_'.$id.'_class',
+            $classes,
+            $important_classes
+        );
 
-    /*evd(array(
-        $classes,
-        $important_classes,
-    ));
-    */
+        // filter for important classes (seldom used), things like 'widget-area'
+        $important_classes  = apply_filters(
+            'bstart_'.$id.'_class_important',
+            $important_classes,
+            $classes
+        );
 
-    // create string for output (using both $classes and $important_classes)
-    $output = implode(' ', array_merge( $classes, $important_classes ) );
+        /*evd(array(
+            $classes,
+            $important_classes,
+        ));
+        */
 
-    if ($return) {
-        // when called with final parameter true
-        // e.g. bstart_class('main', array(), true);
-        return $output;
-    } else {
-        // default behavior
-        echo $output;
-    }
-}
+        // create string for output (using both $classes and $important_classes)
+        $output = implode(' ', array_merge( $classes, $important_classes ) );
+
+        if ($return) {
+            // when called with final parameter true
+            // e.g. bstart_class('main', array(), true);
+            return $output;
+        } else {
+            // default behavior
+            echo $output;
+        }
+    } // bstart_class()
+} // function_exists()
+
 /**
  * Force $classes to be an array (e.g. convert from string if necessary)
  */
