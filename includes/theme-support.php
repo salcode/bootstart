@@ -15,7 +15,7 @@ add_theme_support('automatic-feed-links');
 add_theme_support( 'menus' );
 register_nav_menus(
     array(
-        'main-nav' => __( 'The Main Menu', 'bstart' ),   // main nav in header
+        'primary' => __( 'The Main Menu', 'bstart' ),   // main nav in header
     )
 );
 
