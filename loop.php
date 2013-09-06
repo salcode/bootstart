@@ -16,6 +16,7 @@
         get_template_part( 'content', get_post_format() );
         ?>
     <?php endwhile; ?>
+    <?php comments_template(); ?>
     <?php get_template_part( 'pagination', get_post_format() ); ?>
 <?php else: ?>
     No results
