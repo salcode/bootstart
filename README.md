@@ -37,6 +37,7 @@ bstart_{id}_class
 
 #### e.g. if you want to change #main from the default number of columns to span to 5
 
+```php
 // disable default filter
 remove_filter( 'bstart_main_class', 'do_bstart_main_class' );
 // add new class for 5 columns instead
@@ -45,6 +46,7 @@ function change_main_class( $classes ) {
     $classes[] = 'col-sm-5';
     return $classes;
 }
+```
 
 HTML Comments
 -------------
@@ -59,18 +61,23 @@ when WP_DEBUG is set to true in `wp-config.php`
 This default behavior can be overridden via filters.
 
 #### e.g. if you want to ALWAYS display comments regardless of WP_DEBUG
+
+```php
 add_filter('bstart_comment_active', 'bstart_comment_active_true');
 function bstart_comment_active_true( $active ) {
     return true;
 }
+```
 
 #### e.g. if you want to output NOT as a comment but in <STRONG> tags
+
+```php
 remove_filter('bstart_comment', 'bstart_comment_html');
 function bstart_comment_strong( $output ) {
     return '<strong>' . $output . '</strong>';
 }
 add_filter('bstart_comment', 'bstart_comment_strong');
-
+```
 
 
 
