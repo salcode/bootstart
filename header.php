@@ -5,7 +5,8 @@
  * @package bootstart
  */
 ?><!DOCTYPE html>
-<?php 
+<?php bstart_comment('BEGIN header.php'); ?>
+<?php
  // IE conditional comments to html element
  // http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 ?><!--[if lt IE 7 ]> <html class="ie ie6 no-js" <?php language_attributes(); ?>> <![endif]-->
@@ -33,3 +34,4 @@
             <?php do_action('header_after'); ?>
 
             <div id="content" class="<?php bstart_class('content', 'row'); ?>">
+<?php bstart_comment('END header.php'); ?>

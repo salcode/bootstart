@@ -5,6 +5,8 @@
  * @package bootstart
  */
 ?>
+
+<?php bstart_comment('BEGIN sidebar.php'); ?>
 <div id="sidebar1" class="<?php bstart_class( 'sidebar1', '!widget-area col-sm-3' ); ?>" role="complementary">
     <?php do_action( 'before_sidebar' ); ?>
     <?php if ( ! dynamic_sidebar( 'sidebar1' ) ) : ?>
@@ -23,4 +25,5 @@
         </aside>
 
     <?php endif; // end sidebar widget area ?>
-</div><!-- #sidebar1 -->
+</div><?php bstart_comment('#sidebar'); ?>
+<?php bstart_comment('END sidebar.php'); ?>

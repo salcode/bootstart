@@ -9,6 +9,7 @@
 ?>
 <main id="main" class="<?php bstart_class('main', 'col-sm-9'); ?>" role="main">
     <?php get_template_part( 'loop' ); ?>
-</main><!-- #main -->
+</main><?php bstart_comment('#main'); ?>
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

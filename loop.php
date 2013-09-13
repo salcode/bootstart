@@ -5,7 +5,7 @@
  * @package bootstart
  */
 ?>
-<!-- start loop.php -->
+<?php bstart_comment('BEGIN loop.php'); ?>
 <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
         <?php
@@ -21,4 +21,4 @@
 <?php else: ?>
     No results
 <?php endif; ?>
-<!-- end loop.php -->
+<?php bstart_comment('END loop.php'); ?>

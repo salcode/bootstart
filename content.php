@@ -5,7 +5,7 @@
  * @package bootstart
  */
 ?>
-<!-- start content.php -->
+<?php bstart_comment('BEGIN content.php'); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php if ( has_post_thumbnail() ): ?>
@@ -20,14 +20,14 @@
         <?php if ( 'post' == get_post_type() ) : ?>
             <div class="entry-meta">
             <?php // add entry-meta here ?>
-            </div><!-- .entry-meta -->
+            </div><?php bstart_comment('.entry-meta'); ?>
         <?php endif; ?>
-    </header><!-- .entry-header -->
+    </header><?php bstart_comment('.entry-header'); ?>
 
     <?php if ( is_search() ) : // Only display Excerpts for Search ?>
         <div class="entry-summary">
         <?php the_excerpt(); ?>
-        </div><!-- .entry-summary -->
+        </div><?php bstart_comment('.entry-summary'); ?>
     <?php else : ?>
         <div class="entry-content">
             <?php the_content( __( 'Read More...', 'bootstart' ) ); ?>
@@ -38,7 +38,7 @@
                 'after'  => '</div>',
                 ) );
             ?>
-        </div><!-- .entry-content -->
+        </div><?php bstart_comment('.entry-content'); ?>
     <?php endif; ?>
 
     <footer class="entry-meta">
@@ -61,6 +61,6 @@
                     </span>
             <?php endif; // End if $tags_list ?>
 
-    </footer><!-- .entry-meta -->
-</article><!-- #post-## -->
-<!-- end content.php -->
+    </footer>
+</article>
+<?php bstart_comment('END content.php'); ?>
