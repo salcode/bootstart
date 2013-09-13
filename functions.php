@@ -6,13 +6,13 @@
  * post_after
  * comment_after
  * footer_after (done)
- * 
+ *
  * other possible hooks?  https://github.com/zamoose/themehookalliance
  *
  * @package bootstart
  */
 
-define( 'BSTART_VERSION', '0.1.0' );
+define( 'BSTART_VERSION', '0.1.1' );
 
 /**
  * Include all php files in the /includes directory
@@ -33,17 +33,10 @@ if (!function_exists('bstart_do_nav_before_page_container')) {
  */
 if (!function_exists('bstart_scripts_styles')) {
     function bstart_scripts_styles() {
-        wp_enqueue_script( 'jquery' );
-        // bootstrap css
-        wp_enqueue_style(  'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",  array(),            '3.0.0' );
-        // bootstrap js
-        wp_enqueue_script( 'bootstrap', "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js",    array('jquery'),    '3.0.0', true );
-
-        wp_enqueue_script( 'bstart', get_template_directory_uri() . "/js/bootstart.js", array('bootstrap'), BSTART_VERSION, true );
+        wp_enqueue_script( 'bstart', get_template_directory_uri() . "/js/bootstart.js", array('jquery', 'bootstrap'), BSTART_VERSION, true );
         wp_enqueue_style(  'bstart', get_template_directory_uri() . "/theme.css", array(), BSTART_VERSION );
     }
 } // function_exists()
-
 add_action( 'wp_enqueue_scripts', 'bstart_scripts_styles' );
 
 /**
@@ -59,7 +52,7 @@ if (!function_exists('bstart_ie_cc_js')) {
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-          <script src="<?php echo get_template_directory_uri() . '/js/respond.min.js'; ?>"></script>
+          <script src="<?php echo get_template_directory_uri() . '/js/vendor/respond/respond.min.js'; ?>"></script>
         <![endif]-->
 
         <?php
