@@ -1,7 +1,12 @@
 Bootstart
 =========
-
 Bootstrap 3.0 Starter/Parent Theme
+
+No Longer Under Active Development
+----------------------------------
+This theme is no longer under active development. It has been superceded by
+[Bootstrap Genesis](https://github.com/salcode/bootstrap-genesis)
+a Bootstrap based child theme built on the Genesis Framework.
 
 Bootstrap Classes
 -----------------
@@ -23,7 +28,7 @@ but at this point, I'm not chasing this down to find out.
 being applied and make modifications)
 
 ### `bstart_class()`
-The function `bstart_class()` is used throughout the theme to apply the appropriate classes 
+The function `bstart_class()` is used throughout the theme to apply the appropriate classes
 to the appropriate markup. All classes are assigned through filters.
 Filters are in the form
 bstart_{id}_class
@@ -51,8 +56,8 @@ function change_main_class( $classes ) {
 HTML Comments
 -------------
 
-Theme comments are added via `bstart_comment()` function. By default this function will 
-display the comment inside html comment tags but ONLY when WP_DEBUG is set to true.  
+Theme comments are added via `bstart_comment()` function. By default this function will
+display the comment inside html comment tags but ONLY when WP_DEBUG is set to true.
 e.g. `bstart_comment('loop starts here');`
 would render the markup `<!-- loop starts here -->`
 when WP_DEBUG is set to true in `wp-config.php`
